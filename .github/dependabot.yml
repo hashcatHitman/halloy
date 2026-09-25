@@ -1,7 +1,19 @@
 version: 2
 updates:
   - package-ecosystem: "cargo"
-    directory: "/"
+    directories: ["**/*.lock"]
+    schedule:
+      interval: "monthly"
+    target-branch: "main"
+    versioning-strategy: increase
+    cooldown:
+      default-days: 14
+    groups:
+      rust-dependencies:
+        patterns:
+          - "*"
+  - package-ecosystem: "cargo"
+    directories: ["**/*.toml"]
     schedule:
       interval: "monthly"
     target-branch: "main"
