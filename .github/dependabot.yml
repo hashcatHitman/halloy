@@ -5,6 +5,7 @@ updates:
     schedule:
       interval: "monthly"
     target-branch: "main"
+    versioning-strategy: increase
     groups:
       rust-dependencies:
         patterns:
